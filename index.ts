@@ -2,9 +2,9 @@ import *as express from"express"
 const port = process.env.PORT || 3000
 const app = express();
 
-console.log(process.env.NODE_ENV);
+app.use(express.static("dist"))
 
-app.get('/', (req, res) => {
+app.get('/env', (req, res) => {
     res.send({
       enviromtent:process.env.NODE_ENV
     })
